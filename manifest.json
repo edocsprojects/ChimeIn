@@ -1,0 +1,28 @@
+{
+  "name": "ChimeIn Response Tool",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chimein2.cla.umn.edu/*"
+  ],
+
+  "content_scripts": [
+    {
+        "matches": ["https://chimein2.cla.umn.edu/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }
+  ],
+  "background": { 
+    "service_worker": "background.js" 
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "chimein.png"
+  }
+}
+
